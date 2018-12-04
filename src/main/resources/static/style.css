@@ -1,0 +1,40 @@
+div, h3, img, label, input {
+    border: solid 1px blue
+}
+
+.logo {
+    height: 75px;
+}
+
+.login-header {
+    background-color: #3c3c3c;
+}
+
+.login-header div h3 {
+    color: #fbda00;
+    text-transform: uppercase;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.login-content {
+    margin-top: 30px;
+}
+
+.login-button {
+    margin-top: 15px;
+    float: right;
+    color: #fff;
+    background-color: #86b445;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.username-input, .password-input {
+    border-radius: 2px;
+}
+
+.password-row {
+    margin-top: 15px;
+}
