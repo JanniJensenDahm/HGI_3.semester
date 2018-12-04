@@ -1,0 +1,203 @@
+/*div, h3, img, label, input {*/
+/*border: solid 1px blue*/
+/*}*/
+
+body {
+    font-family: "Open Sans", serif;
+}
+
+.logo {
+    height: 75px;
+    padding: 10px 10px 5px 10px;
+}
+
+.company {
+    font-family: oswald, serif;
+    font-weight: bold;
+    font-size: 40px;
+    padding-left: 0;
+}
+
+.login-box {
+    padding: 0;
+    border: solid 1px black;
+    border-radius: 5px;
+    margin-top: 10%;
+    width: 25%;
+}
+
+.login-header {
+    padding: 0 20px;
+    background-color: #3c3c3c;
+}
+
+.login-header div h3 {
+    color: #fbda00;
+    text-transform: uppercase;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.login-content {
+    margin: 20px;
+}
+
+.login-content form {
+    margin: 20px;
+}
+
+.login-button {
+    margin: 20px 0 0 auto;
+    color: #fff;
+    background-color: #86b445;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #7ca543;
+}
+
+.username-input, .password-input {
+    height: calc(2.25rem + 5px);
+    padding: .375rem .75rem;
+    border: solid 1px #828181;
+    outline: none;
+    border-radius: 5px;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0px 9999px white;
+}
+
+.username-label, .password-label {
+    padding: 0;
+    margin: 0;
+}
+
+.password-row {
+    margin-top: 15px;
+}
+
+
+/* Navbar */
+.orangeBottom{
+    border-bottom: 3px solid #c86a1d;
+}
+
+.navbarStyle {
+    background-color: #3d3d3d;
+    height: 65px;
+    padding: 0;
+}
+
+.navbarStyle a {
+    color: #fff !important;
+}
+
+.navbarLogo {
+    background-color: #3d3d3d !important;
+    height: 37px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbarLogoDiv {
+    height: 100%;
+    background-color: #3d3d3d;
+    padding: 15px 30px 0;
+}
+
+.nav-link {
+    padding: 20px !important;
+    height: 65px;
+}
+
+.nav-link:hover {
+    background-color: #313e5b;
+    transition: background-color .1s ease-in-out;
+}
+
+.navbar-nav {
+    height: 100%;
+}
+
+#navbarNavDropdown {
+    height: 100%;
+}
+
+.navDropdown {
+    margin: 0;
+    padding: 0;
+    background-color: #3d3d3d;
+    top: auto;
+    border: none;
+    border-radius: 0;
+}
+
+.dropdown-item:hover {
+    background-color: #313e5b;
+    color: #fff;
+    transition: background-color .1s ease-in-out;
+}
+
+.dropdown-item {
+    padding: 9px 24px;
+    border-bottom: solid 1px #666888;
+}
+
+.navbarSettings {
+    right: 0;
+    position: absolute;
+}
+
+#profilePicture {
+    height: 25px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown:hover {
+    background-color: #313e5b;
+    transition: background-color .1s ease-in-out;
+}
+
+#navbarDropdownMenuLink {
+    padding: 0 20px 0 0 !important;
+    color: #fff;
+    cursor: default;
+}
+
+.navbar-nav .nav-item {
+    background-color: #3d3d3d;
+}
+
+.navbar-toggler {
+    margin-right: 20px;
+}
+
+.userIcon {
+    font-size: 35px;
+    vertical-align: middle;
+}
+
+.userName {
+    padding: 20px 10px 20px 20px !important;
+}
+
+/* Top bar */
+.topBar {
+    font-family: "Helvetica Neue Condensed", sans-serif;
+    text-transform: uppercase;
+    display: flex;
+    width: 100%;
+    background-color: #c8d0d8;
+    padding: 3px 30px;
+}
+
+
+

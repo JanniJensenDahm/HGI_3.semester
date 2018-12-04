@@ -22,15 +22,15 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
         Set<String> roles = AuthorityUtils.authorityListToSet(authentication.getAuthorities());
 
-        if (roles.contains("ROLE_ROLE1")) {
-            httpServletResponse.sendRedirect("redirectlink");
+        if (roles.contains("ROLE_INSTRUCTOR")) {
+            httpServletResponse.sendRedirect("/board");
         } else if (roles.contains("ROLE_ROLE2")) {
             httpServletResponse.sendRedirect("redirectlink");
         } else if (roles.contains("ROLE_ROLE3")) {
             httpServletResponse.sendRedirect("redirectlink");
 
         }else {
-                httpServletResponse.sendRedirect("/login");
+                httpServletResponse.sendRedirect("/logifn");
             }
         }
 
