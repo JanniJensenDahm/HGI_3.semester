@@ -1,9 +1,11 @@
 package dk.hgigym.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+
+import java.util.List;
+import java.util.Set;
 
 @Entity
 public class User {
@@ -15,6 +17,7 @@ public class User {
     private String phoneNumber;
     private String role;
     private Boolean enabled;
+
 
     public User() {
     }
@@ -76,4 +79,5 @@ public class User {
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
+
 }

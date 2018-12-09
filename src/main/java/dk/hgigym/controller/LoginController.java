@@ -38,6 +38,6 @@ public class LoginController {
         user.setEnabled(true);
         user.setPassword(passwordEncoder.encode("1234"));
         userRepository.save(user);
-        return "lofdfsdgin";
+        return "user created with email and pass \nEmail:" + user.getEmail() + "\nPass: 1234";
     }
 }

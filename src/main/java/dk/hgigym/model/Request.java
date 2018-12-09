@@ -6,10 +6,11 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
- * Author Janni Jensen-Dahm
  * Date 04. dec. 2018
  */
 @Entity
@@ -18,29 +19,29 @@ public class Request {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String activity;
-    @DateTimeFormat(pattern = "dd MM-yyyy")
-    private LocalDateTime date;
-    private LocalTime startTime;
-    private LocalTime endTime;
-    private String place;
+    private String date;
+    private String time;
+    private String location;
     private String phone;
     private String note;
+    private String wantedRole;
+    @OneToOne
+    private User requester;
+    @OneToOne
+    private User assigneee;
 
-    @ManyToMany
-    private List<User> users;
+
 
     public Request() {
     }
 
-    public Request(String activity, LocalDateTime date, LocalTime startTime, LocalTime endTime, String place, String phone, String note, ArrayList<User> users) {
+    public Request(String activity, String date, String time, String place, String phone, String note) {
         this.activity = activity;
         this.date = date;
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.place = place;
+        this.time = time;
+        this.location = place;
         this.phone = phone;
         this.note = note;
-        this.users = users;
     }
 
     public Long getId() {
@@ -59,36 +60,44 @@ public class Request {
         this.activity = activity;
     }
 
-    public LocalDateTime getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public LocalTime getStartTime() {
-        return startTime;
+    public String getTime() {
+        return time;
     }
 
-    public void setStartTime(LocalTime startTime) {
-        this.startTime = startTime;
+    public void setTime(String time) {
+        this.time = time;
     }
 
-    public LocalTime getEndTime() {
-        return endTime;
+    public User getRequester() {
+        return requester;
     }
 
-    public void setEndTime(LocalTime endTime) {
-        this.endTime = endTime;
+    public void setRequester(User requester) {
+        this.requester = requester;
     }
 
-    public String getPlace() {
-        return place;
+    public User getAssigneee() {
+        return assigneee;
     }
 
-    public void setPlace(String place) {
-        this.place = place;
+    public void setAssigneee(User assigneee) {
+        this.assigneee = assigneee;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getPhone() {
@@ -107,11 +116,11 @@ public class Request {
         this.note = note;
     }
 
-    public List<User> getUsers() {
-        return users;
+    public String getWantedRole() {
+        return wantedRole;
     }
 
-    public void setUsers(ArrayList<User> users) {
-        this.users = users;
+    public void setWantedRole(String wantedRole) {
+        this.wantedRole = wantedRole;
     }
 }
