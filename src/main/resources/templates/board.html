@@ -4,6 +4,7 @@
     <meta charset="UTF-8"/>
     <title>Title</title>
     <th:block th:include="fragments/head :: headInclude"/>
+    <th:block th:include="fragments/to_top :: to_top"/>
 </head>
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
@@ -40,7 +41,7 @@
         <!--Request list-->
         <div class="container" id="request-list">
             <div class="hover-effect board-row" th:each="request : ${requestList}">
-                <a th:href="@{'/request/'+ ${request.getId()}} ">
+                <a th:href="@{'/request/'+ ${request.getId()}+ '?accept'}">
                     <div class="row text-center board-row-inner">
                         <p class="col-md-2 board-request-text" th:text="${request.getActivity()}">Trampolin</p>
                         <p class="col-md-2 board-request-text" th:text="${#strings.substring(request.getDate(),8,10)} + '-' +${#strings.substring(request.getDate(),5,7)} + '-' + ${#strings.substring(request.getDate(),0,4)}">23/12-2018</p>
@@ -51,7 +52,6 @@
                 </a>
             </div>
         </div>
-
     </div>
 
 </div>

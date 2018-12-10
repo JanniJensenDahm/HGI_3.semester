@@ -4,6 +4,7 @@
     <meta charset="UTF-8"/>
     <title>Efterspørgsel</title>
     <th:block th:include="fragments/head :: headInclude"/>
+    <link rel="stylesheet" href="../../../../../../../../../../Desktop/src/main/resources/static/style/style.css">
 </head>
 <body>
 <nav th:replace="fragments/navbar :: navbar"></nav>
@@ -85,7 +86,12 @@
             <input type="text" th:field="${request.id}" hidden="hidden"/>
             <div class="container">
                 <div class="row button-row">
-                    <button type="submit" class="ok-button request-button">Opdater</button>
+                    <div class="col-md-6">
+                        <button name="delete-request" type="submit" value="Slet" class="remove-button btn btn-danger">Slet</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="ok-button request-button">Opdater</button>
+                    </div>
                 </div>
             </div>
 
@@ -93,7 +99,6 @@
     </div>
 
 </div>
-
 
 </body>
 </html>

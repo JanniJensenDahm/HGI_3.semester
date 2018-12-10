@@ -21,7 +21,6 @@ public class RequestController {
     @Autowired
     UserRepository userRepository;
 
-
     @GetMapping("/createRequest")
     public String createRequest(Model model) {
         model.addAttribute("request", new Request());
@@ -41,11 +40,10 @@ public class RequestController {
     public String editRequest(@PathVariable Long id, Model model) {
         Request request = requestRepository.findRequest(id);
         model.addAttribute("request", request);
-        System.out.println(request.getRequester().getEmail());
         model.addAttribute("requester", request.getRequester().getEmail());
-        if(request.getAssigneee() != null){
+        if (request.getAssigneee() != null) {
             model.addAttribute("assignee", request.getAssigneee().getEmail());
-        }else{
+        } else {
             model.addAttribute("assignee", "{{NO ASSIGNEE}}");
         }
         return "edit_request";
@@ -53,16 +51,14 @@ public class RequestController {
 
     @PostMapping("/request/edit")
     public String editRequest(@ModelAttribute Request request, @RequestParam String requester, @RequestParam String assignee) {
-        System.out.println(requester);
-
         request.setRequester(userRepository.findByEmail(requester));
-        if(!assignee.equals("{{NO ASSIGNEE}}")){
+        if (!assignee.equals("{{NO ASSIGNEE}}")) {
             request.setAssigneee(userRepository.findByEmail(assignee));
         }
         requestRepository.save(request);
-        return "redirect:/board";
-    }
+        return "redirect:/myPage";
 
+    }
 
     @GetMapping("/request/{id}")
     public String request(Model model, @PathVariable Long id) {
@@ -70,5 +66,9 @@ public class RequestController {
         return "request";
     }
 
-
+    @PostMapping(value = "/request/edit", params = "delete-request")
+    public String deleteRequest(@RequestParam Long id){
+        requestRepository.deleteRequest(id);
+        return "redirect:/myPage";
+    }
 }
