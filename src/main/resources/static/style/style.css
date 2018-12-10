@@ -261,8 +261,8 @@ a:hover{
     text-decoration: none;
 }
 
-.board-row:hover .board-request-text {
-    color: #d27c11;
+.board-row:hover {
+    color: #ece3c9;
 }
 
 .request-header {
