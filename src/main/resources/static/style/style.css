@@ -262,7 +262,7 @@ a:hover{
 }
 
 .board-row:hover {
-    color: #ece3c9;
+    background-color: #ece3c9;
 }
 
 .request-header {
