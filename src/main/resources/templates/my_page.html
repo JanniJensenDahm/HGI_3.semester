@@ -39,7 +39,7 @@
                     <p>Sted</p>
                 </div>
                 <div class="col-md-3">
-                    <p>Forespørger</p>
+                    <p>Accepteret af</p>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@
                         <p class="col-md-2 board-request-text" th:text="${#strings.substring(myRequest.getDate(),8,10)} + '-' +${#strings.substring(myRequest.getDate(),5,7)} + '-' + ${#strings.substring(myRequest.getDate(),0,4)}">23/12-2018</p>
                         <p class="col-md-2 board-request-text" th:text="${myRequest.getTime()}">10.45</p>
                         <p class="col-md-3 board-request-text" th:text="${myRequest.getLocation()}">Hal 3</p>
-                        <p class="col-md-3 board-request-text" th:text="${myRequest.requester.getFirstName()} + ' '  +${myRequest.requester.getLastName()}">Karsten Kristensen</p>
+                        <p class="col-md-3 board-request-text" th:text="${myRequest.assignee != null} ? ${myRequest.assignee.getFirstName()} + ' ' +${myRequest.assignee.getLastName()} : 'Ingen'"></p>
                     </div>
                 </a>
             </div>
