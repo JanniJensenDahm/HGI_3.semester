@@ -41,8 +41,8 @@ public class RequestController {
         Request request = requestRepository.findRequest(id);
         model.addAttribute("request", request);
         model.addAttribute("requester", request.getRequester().getEmail());
-        if (request.getAssigneee() != null) {
-            model.addAttribute("assignee", request.getAssigneee().getEmail());
+        if (request.getAssignee() != null) {
+            model.addAttribute("assignee", request.getAssignee().getEmail());
         } else {
             model.addAttribute("assignee", "{{NO ASSIGNEE}}");
         }
@@ -53,7 +53,7 @@ public class RequestController {
     public String editRequest(@ModelAttribute Request request, @RequestParam String requester, @RequestParam String assignee) {
         request.setRequester(userRepository.findByEmail(requester));
         if (!assignee.equals("{{NO ASSIGNEE}}")) {
-            request.setAssigneee(userRepository.findByEmail(assignee));
+            request.setAssignee(userRepository.findByEmail(assignee));
         }
         requestRepository.save(request);
         return "redirect:/myPage";

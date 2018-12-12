@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.view.RedirectView;
 
 @RestController
 public class RequestApiController {
@@ -28,7 +27,7 @@ public class RequestApiController {
     public ResponseEntity<String> editRequest(@PathVariable Long id, @RequestParam String email){
         Request request = requestRepository.findRequest(id);
         User asignee = userRepository.findByEmail(email);
-        request.setAssigneee(asignee);
+        request.setAssignee(asignee);
         requestRepository.save(request);
         return new ResponseEntity<>("accepted", HttpStatus.OK);
     }

@@ -1,14 +1,6 @@
 package dk.hgigym.model;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import javax.persistence.*;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 /**
  * Date 04. dec. 2018
@@ -28,7 +20,7 @@ public class Request {
     @OneToOne
     private User requester;
     @OneToOne
-    private User assigneee;
+    private User assignee;
 
 
 
@@ -84,12 +76,12 @@ public class Request {
         this.requester = requester;
     }
 
-    public User getAssigneee() {
-        return assigneee;
+    public User getAssignee() {
+        return assignee;
     }
 
-    public void setAssigneee(User assigneee) {
-        this.assigneee = assigneee;
+    public void setAssignee(User assignee) {
+        this.assignee = assignee;
     }
 
     public String getLocation() {

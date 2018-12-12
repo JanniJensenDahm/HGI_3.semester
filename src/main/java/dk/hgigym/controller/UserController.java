@@ -22,9 +22,10 @@ public class UserController {
 
 
 
+
     @GetMapping("/board")
     public String board(Model model) {
-        List<Request> requestList = requestRepository.findAllByAssigneeeEmailIsNull();
+        List<Request> requestList = requestRepository.findAllByAssigneeEmailIsNull();
         model.addAttribute("requestList", requestList);
         return "board";
     }
@@ -32,7 +33,7 @@ public class UserController {
     @GetMapping("/myPage")
     public String myPage(Model model) {
         User currentuser = userRepository.findByEmail(SecurityContextHolder.getContext().getAuthentication().getName());
-        List<Request> acceptedRequestsList = requestRepository.findAllByAssigneeeEmail(currentuser.getEmail());
+        List<Request> acceptedRequestsList = requestRepository.findAllByAssigneeEmail(currentuser.getEmail());
 
         List<Request> myRequestsList = requestRepository.findAllByRequesterEmail(currentuser.getEmail());
 

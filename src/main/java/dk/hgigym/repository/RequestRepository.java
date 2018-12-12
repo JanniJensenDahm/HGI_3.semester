@@ -12,8 +12,8 @@ import java.util.List;
 
 public interface RequestRepository extends CrudRepository<Request, Long> {
     List<Request> findAll();
-    List<Request> findAllByAssigneeeEmail(String email);
-    List<Request> findAllByAssigneeeEmailIsNull();
+    List<Request> findAllByAssigneeEmail(String email);
+    List<Request> findAllByAssigneeEmailIsNull();
     List<Request> findAllByRequesterEmail(String email);
     @Query(value = "SELECT * FROM request WHERE id = ?1", nativeQuery = true)
     Request findRequest(Long id);
